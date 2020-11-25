@@ -45,12 +45,14 @@ namespace MyApplication
             Console.WriteLine("Characters shouldn't start with: ");
             foreach (var ValuePrinter in userInputVal.digit1_not)
                 Console.WriteLine(ValuePrinter);
+            DigiCheck.DigiOneDigit(userInputVal.digit1_not);
             DigiCheck.Digi_Counter(userInputVal.digit1_not);
             DigiCheck.Digi_special(userInputVal.digit1_not);
 
             Console.WriteLine("Characters shouldn't end with: ");
             foreach (var ValuePrinter in userInputVal.digit2_not)
                 Console.WriteLine(ValuePrinter);
+            DigiCheck.DigiOneDigit(userInputVal.digit2_not);
             DigiCheck.Digi_Counter(userInputVal.digit2_not);
             DigiCheck.Digi_special(userInputVal.digit2_not);
                         while (Globals.FlagG == 0)
