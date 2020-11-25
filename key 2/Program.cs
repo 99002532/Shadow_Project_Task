@@ -53,3 +53,26 @@ namespace MyApplication
                 Console.WriteLine(ValuePrinter);
             DigiCheck.Digi_Counter(userInputVal.digit2_not);
             DigiCheck.Digi_special(userInputVal.digit2_not);
+                        while (Globals.FlagG == 0)
+            {
+
+                var DigiReverVal = new rand_reverse();
+                ArrayList ArrayReverse = new ArrayList();
+                ArrayReverse = DigiReverVal.reverse_digiter(RandomValueGen);
+                // Console.WriteLine("size" + ArrayReverse.Count);
+
+                var CompareOp = new comparator_value();
+                var CompareOp1 = new comparator_value();
+
+                ArrayList array_compareval = CompareOp.comparors(userInputVal.digit1_not, ArrayReverse, 1);//comparing digit 1 with the generated random number.
+                ArrayList array_compareval1 = CompareOp1.comparors(userInputVal.digit2_not, ArrayReverse, 2);//comparing digit 2 with the generated random number.
+
+                RandomValueGen = FileOp.IfElseComparator(userInputVal.size,RandomValueGen);
+
+            }
+            Console.WriteLine("Finished Key generation: " + RandomValueGen);//Printig the final genrated random number.
+        }
+    };
+
+}
+
