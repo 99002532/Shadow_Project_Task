@@ -22,9 +22,19 @@ namespace KeyGen
     {
     public UserInput ReaderInput()
     {
-        StreamReader ReaderFile = new StreamReader(@"C:\Users\CTEA\Documents\input.json");
- 
+        StreamReader ReaderFile;
+            try
+            {
+                ReaderFile = new StreamReader(@"C:\Users\CTEA\Documents\input.json");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("File Not found");
+                Console.ReadLine();
+                System.Environment.Exit(0);
+            }
 
+            ReaderFile = new StreamReader(@"C:\Users\CTEA\Documents\input.json");
             string str = ReaderFile.ReadToEnd();
 
             try
