@@ -1,87 +1,154 @@
+//using Microsoft.IdentityModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyApplication;
+using KeyGen;
 
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class Tests
     {
+
         [TestMethod]
-        public void TestMethod1()
+         public void SizeRun()
         {
             int size = 0;
-            Assert.IsTrue(size <= 0, "Test Method 1 has passed");
-        }
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            int size = 1;
-            for (size = 1; size < 10; size++)
-                Assert.IsTrue((size > 0) && (size < 10), "Test Method 2 has passed");
-        }
-
-        [TestMethod]
-        public void TestMethod3()
-        {
-            char size = '\0';
-            do
+            for (size = 1; size <=1; size++)
             {
-                if (((int)size < 48) && ((int)size > 58))
+                switch (size)
                 {
-                    Assert.IsTrue(((int)size < 48) && ((int)size > 58), "Test Method 3 has passed");
-                }
-                size++;
-            } while ((int)size < 256);
-
-        }
-        [TestMethod]
-        public void TestMethod4()
-        {
-            int size = 1, digi_1;
-            for (size = 1; size < 10; size++)
-            {
-                for (digi_1 = 1; digi_1 <= size; digi_1++)
-                {
-                    Assert.IsTrue((digi_1 <= size), "Test Method 4 has passed");
+                    case 1:
+                        RandomKey_Running_1();
+                        break;
+                    case 2:
+                        RandomKey_Running_2();
+                        break;
+                    case 3:
+                        RandomKey_Running_3();
+                        break;
+                    case 4:
+                        RandomKey_Running_4();
+                        break;
+                    case 5:
+                        RandomKey_Running_5();
+                        break;
+                    case 6:
+                        RandomKey_Running_6();
+                        break;
+                    case 7:
+                        RandomKey_Running_7();
+                        break;
+                    case 8:
+                        RandomKey_Running_8();
+                        break;
                 }
 
             }
         }
-
         [TestMethod]
-        public void TestMethod5()
+        public void RandomKey_Running_1()
         {
-            int size = 1, digi_2;
-            for (size = 1; size < 10; size++)
-            {
-                for (digi_2 = 1; digi_2 <= size; digi_2++)
-                {
-                    Assert.IsTrue((digi_2 <= size), "Test Method 5 has passed");
-                }
+            int min = 1;
+            int max = 10;
+            KeyGenerator KeyObj = new KeyGenerator();
 
-            }
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 1 && ActualVal < 10);
+
         }
 
         [TestMethod]
-        public void TestMethod6()
+        public void RandomKey_Running_2()
         {
-            int size = -1;
-            Assert.IsTrue(size <=0, "Test Method 6 has passed");
+            int min = 10;
+            int max = 100;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 10 && ActualVal < 100);
+
         }
 
         [TestMethod]
-        public void TestMethod7()
+        public void RandomKey_Running_3()
         {
-            int digi_1 = -1;
-            Assert.IsFalse(digi_1<0, "Test Method 7 has failed");
+            int min = 100;
+            int max = 1000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 100 && ActualVal < 1000);
+
+        }
+        [TestMethod]
+        public void RandomKey_Running_4()
+        {
+            int min = 1000;
+            int max = 10000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 1000 && ActualVal < 10000);
+
+        }
+        [TestMethod]
+        public void RandomKey_Running_5()
+        {
+            int min = 10000;
+            int max = 100000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 10000 && ActualVal < 100000);
+
         }
 
         [TestMethod]
-        public void TestMethod8()
+        public void RandomKey_Running_6()
         {
-            int digi_2 = -1;
-            Assert.IsFalse(digi_2 < 0, "Test Method 8 has failed");
+            int min = 100000;
+            int max = 1000000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 100000 && ActualVal < 1000000);
+
         }
+
+        [TestMethod]
+        public void RandomKey_Running_7()
+        {
+            int min = 10000000;
+            int max = 100000000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 10000000 && ActualVal < 100000000);
+
+        }
+        [TestMethod]
+        public void RandomKey_Running_8()
+        {
+            int min = 100000000;
+            int max = 1000000000;
+            KeyGenerator KeyObj = new KeyGenerator();
+
+            int ActualVal = KeyObj.RandomKey(min, max);
+
+            Assert.IsTrue(ActualVal >= 100000000 && ActualVal < 1000000000);
+
+        }
+     
+
+
 
     }
 }
