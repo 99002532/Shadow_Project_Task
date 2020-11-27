@@ -4,11 +4,11 @@ using System.Text;
 
 namespace KeyGen
 {
-    interface Idigits_twister
+    interface IDigitsGenerate
     {
-        public int rand_digits(int size);
+        public int RandDigits(int size);
     }
-    class digits_twister : Idigits_twister
+    class DigitsGenerate : IDigitsGenerate
     {
         /// <summary>
         /// Random Digits
@@ -16,38 +16,38 @@ namespace KeyGen
         /// </summary>
         /// <param name="size"></param>
         /// <returns></returns>
-        public int rand_digits(int size)
+        public int RandDigits(int size)
         {
-            int r_d = 0;
+            int RandVal = 0;
             var KeyGens = new KeyGenerator();
             switch (size)
             {
                 case 1:
-                    r_d = KeyGens.RandomKey(1, 10);
+                    RandVal = KeyGens.RandomKey(1, 10);
                     break;
                 case 2:
-                    r_d = KeyGens.RandomKey(10, 100);
+                    RandVal = KeyGens.RandomKey(10, 100);
                     break;
                 case 3:
-                    r_d = KeyGens.RandomKey(100, 1000);
+                    RandVal = KeyGens.RandomKey(100, 1000);
                     break;
                 case 4:
-                    r_d = KeyGens.RandomKey(1000, 9999);
+                    RandVal = KeyGens.RandomKey(1000, 9999);
                     break;
                 case 5:
-                    r_d = KeyGens.RandomKey(10000, 99999);
+                    RandVal = KeyGens.RandomKey(10000, 99999);
                     break;
                 case 6:
-                    r_d = KeyGens.RandomKey(100000, 999999);
+                    RandVal = KeyGens.RandomKey(100000, 999999);
                     break;
                 case 7:
-                    r_d = KeyGens.RandomKey(1000000, 9999999);
+                    RandVal = KeyGens.RandomKey(1000000, 9999999);
                     break;
                 case 8:
-                    r_d = KeyGens.RandomKey(10000000, 99999999);
+                    RandVal = KeyGens.RandomKey(10000000, 99999999);
                     break;
                 case 9:
-                    r_d = KeyGens.RandomKey(10000000, 999999999);
+                    RandVal = KeyGens.RandomKey(10000000, 999999999);
                     break;
                 default:
                     Console.WriteLine("Maximum 9 size is allowed");
@@ -58,7 +58,7 @@ namespace KeyGen
 
             }
 
-            return r_d;
+            return RandVal;
 
         }
     };

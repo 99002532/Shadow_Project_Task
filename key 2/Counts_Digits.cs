@@ -4,22 +4,22 @@ using System.Linq;
 
 namespace KeyGen
 {
-    interface ICounts_Digits
+    interface ICountsDigits
     {
-        public void Digi_Counter(ArrayList digis);
+        public void DigitsCounter(ArrayList Digits);
     }
-    class Counts_Digits : ICounts_Digits
+    public class CountsDigits : ICountsDigits
     {
         /// <summary>
         /// DigitConter:
-        /// this function will count the digits.if it is more than 3 digits program will show an error message and exit.
+        /// this function will count the Digits.if it is more than 3 Digits program will show an error message and exit.
         /// </summary>
-        /// <param name="digis"></param>
-        public void Digi_Counter(ArrayList digis)
+        /// <param name="Digits"></param>
+        public void DigitsCounter(ArrayList Digits)
         {
-            if (digis.Count > 3)
+            if (Digits.Count > 3)
             {
-                Console.WriteLine("Maximum three digits are accepted");
+                Console.WriteLine("Maximum three Digits are accepted");
                 Console.ReadLine();
                 System.Environment.Exit(0);
             }
@@ -39,27 +39,27 @@ namespace KeyGen
                 }
              }
         }
-        public void Digi_special(ArrayList digits)
+        public void DigitsSpecialChecker(ArrayList Digits)
         {
-            String digi_str;
+            String DigitsString;
             try
             {
-                digi_str = digits[0].ToString();
+                DigitsString = Digits[0].ToString();
             }
             catch(Exception e)
             {
                 return;
             }
-           digi_str = digits.ToString();
-            char[] digi_char = digi_str.ToCharArray();
+           DigitsString = Digits.ToString();
+            char[] DigitsCharArray = DigitsString.ToCharArray();
 
 
-            for (int i = 0; i < digits.Count; i++)
+            for (int i = 0; i < Digits.Count; i++)
             {
-                digi_str = digits[i].ToString();
-                digi_char = digi_str.ToCharArray();
-                //Console.WriteLine("Characters: " + digi_char[i]);
-                if (Char.IsLetter(digi_char[0]))
+                DigitsString = Digits[i].ToString();
+                DigitsCharArray = DigitsString.ToCharArray();
+                //Console.WriteLine("Characters: " + DigitsCharArray[i]);
+                if (Char.IsLetter(DigitsCharArray[0]))
                 {
                     Console.WriteLine("No Characters allowed in input");
                     Console.ReadLine();

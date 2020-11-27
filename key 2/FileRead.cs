@@ -15,8 +15,8 @@ namespace KeyGen
     class UserInput
     {
         public int size { get; set; }
-        public ArrayList digit1_not { get; set; }
-        public ArrayList digit2_not { get; set; }
+        public ArrayList StartDigits { get; set; }
+        public ArrayList EndDigits { get; set; }
     }
     class FileRead: IFileRead
     {
@@ -26,8 +26,9 @@ namespace KeyGen
             try
             {
                 ReaderFile = new StreamReader(@"C:\Users\CTEA\Documents\input.json");
+                //class***
             }
-            catch(Exception e)
+            catch(Exception )
             {
                 Console.WriteLine("File Not found");
                 Console.ReadLine();
@@ -48,22 +49,22 @@ namespace KeyGen
                 Console.ReadLine();
                 System.Environment.Exit(0);
             }
-            var userInputVal = JsonSerializer.Deserialize<UserInput>(str);
-            return userInputVal;
+            var UserInputValue = JsonSerializer.Deserialize<UserInput>(str);
+            return UserInputValue;
     }
 
     public int IfElseComparator(int size, int RandomValue)
     {
-        var digi_r1 = new digits_twister();
+        var digi_r1 = new DigitsGenerate();
 
         if (Globals.FlagOne == 1)//checking if digit1 matches with generated random number 
         {
-            RandomValue = digi_r1.rand_digits(size);
+            RandomValue = digi_r1.RandDigits(size);
             Globals.FlagOne = 0;
         }
         else if (Globals.FlagTwo == 1)//checking if digit2 matches with generated random number 
         {
-            RandomValue = digi_r1.rand_digits(size);
+            RandomValue = digi_r1.RandDigits(size);
             Globals.FlagTwo = 0;
         }
         else//exiting the loop

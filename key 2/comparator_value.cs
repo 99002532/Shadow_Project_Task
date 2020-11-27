@@ -4,58 +4,58 @@ using MyApplication;
 
 namespace KeyGen
 {
-    interface Icomparator_value
+    interface IComparatorValue
     {
-        public ArrayList comparors(ArrayList dval, ArrayList dresult, int switcher);
+        public ArrayList ComparorsValue(ArrayList Dvalue, ArrayList Dresult, int switcher);
     }
-    class comparator_value : Icomparator_value
+    class ComparatorValue : IComparatorValue
     {
 
         /// <summary>
         /// DigitComparor:
-        /// this function will compare the digits whether they are same are not.
+        /// this function will compare the Digits whether they are same are not.
         /// </summary>
-        /// <param name="dval"></param>
-        /// <param name="dresult"></param>
+        /// <param name="Dvalue"></param>
+        /// <param name="Dresult"></param>
         /// <param name="switcher"></param>
         /// <returns></returns>
-        public ArrayList comparors(ArrayList dval, ArrayList dresult, int switcher)
+        public ArrayList ComparorsValue(ArrayList Dvalue, ArrayList Dresult, int switcher)
         {
 
-            int dval_len = dval.Count;
-            int dresult_len = dresult.Count;
-            ArrayList array_temp = new ArrayList();
+            int DvalLength = Dvalue.Count;
+            int DresultLength = Dresult.Count;
+            ArrayList TempArray = new ArrayList();
             switch (switcher)
             {
                 case 1:
-                    for (int i = 0; i < dval_len; i++)
+                    for (int i = 0; i < DvalLength; i++)
                     {
-                        //Console.WriteLine("loop1: " + dval[i] + "  " + dresult[dresult_len - 1]);
-                        if (String.Equals(dval[i].ToString(), dresult[dresult_len - 1].ToString()))
-                        //if (dval[i].Equals(dresult[dresult_len - 1]))
+                        //Console.WriteLine("loop1: " + Dvalue[i] + "  " + Dresult[DresultLength - 1]);
+                        if (String.Equals(Dvalue[i].ToString(), Dresult[DresultLength - 1].ToString()))
+                        //if (Dvalue[i].Equals(Dresult[DresultLength - 1]))
                         {
                             Globals.FlagOne = 1;
-                            return array_temp;
+                            return TempArray;
                         }
                     }
 
                     break;
                 case 2:
-                    for (int i = 0; i < dval_len; i++)
+                    for (int i = 0; i < DvalLength; i++)
                     {
-                        //Console.WriteLine("loop2: " + dval[i] + "  " + dresult[0]);
-                        if (String.Equals(dval[i].ToString(), dresult[0].ToString()))
-                        //if (dval[i].Equals(dresult[0]))
+                        //Console.WriteLine("loop2: " + Dvalue[i] + "  " + Dresult[0]);
+                        if (String.Equals(Dvalue[i].ToString(), Dresult[0].ToString()))
+                        //if (Dvalue[i].Equals(Dresult[0]))
                         {
                             Globals.FlagTwo = 1;
-                            return array_temp;
+                            return TempArray;
                         }
                     }
 
 
                     break;
             }
-            return array_temp;
+            return TempArray;
         }
     };
 }
