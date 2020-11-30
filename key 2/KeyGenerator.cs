@@ -8,7 +8,7 @@ namespace KeyGen
     {
         public int RandomKey(int min, int max);
     }
-    class KeyGenerator:IKeyGenerator
+    public class KeyGenerator:IKeyGenerator
 {
     /// <summary>
     /// Random Key Generator
@@ -24,5 +24,7 @@ namespace KeyGen
         int a = ran.Next(min, max);
         return a;
     }
-};
+
+        
+    };
 }

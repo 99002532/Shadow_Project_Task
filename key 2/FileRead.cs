@@ -12,13 +12,13 @@ namespace KeyGen
         public UserInput ReaderInput();
         public int IfElseComparator(int size, int RandomValue);
     }
-    class UserInput
+    public class UserInput
     {
         public int size { get; set; }
         public ArrayList StartDigits { get; set; }
         public ArrayList EndDigits { get; set; }
     }
-    class FileRead: IFileRead
+     public class FileRead: IFileRead
     {
     public UserInput ReaderInput()
     {

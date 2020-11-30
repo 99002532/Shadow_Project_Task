@@ -8,7 +8,7 @@ namespace KeyGen
     {
         public int RandDigits(int size);
     }
-    class DigitsGenerate : IDigitsGenerate
+    public class DigitsGenerate : IDigitsGenerate
     {
         /// <summary>
         /// Random Digits

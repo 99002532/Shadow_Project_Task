@@ -1,7 +1,8 @@
-//using Microsoft.IdentityModel;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyApplication;
 using KeyGen;
+using System.Collections;
 
 namespace UnitTestProject1
 {
@@ -14,7 +15,7 @@ namespace UnitTestProject1
         {
             int size = 0;
 
-            for (size = 1; size <=1; size++)
+            for (size = 1; size < 10; size++)
             {
                 switch (size)
                 {
@@ -149,7 +150,74 @@ namespace UnitTestProject1
      
 
 
+    }
 
+  
+    [TestClass]
+
+    public class RandRevTest
+    {
+        [TestMethod]
+        public void ReverseDigiter_Test()
+        {
+            RandomReverse RandRev = new RandomReverse();
+            ArrayList ActualVal = RandRev.ReverseDigiter(567);
+            
+
+            ArrayList ReverseArray1 = new ArrayList() { 7,6,5};
+            for (int i = 0; i< 3; i++)
+                Assert.IsTrue(ActualVal[i].Equals(ReverseArray1[i]));
+        }
+    }
+
+    [TestClass]
+
+    public class FileReadTest
+    {
+        [TestMethod]
+        public void IfElseComparatorTest()
+        {
+            int sizeTest = 5;
+            FileRead DigiFun = new FileRead ();
+            int randval=DigiFun.IfElseComparator(sizeTest,34567);
+            Assert.IsTrue(34567 != randval);
+
+        }
+    }
+    [TestClass]
+    public class ComparatorValueTest
+    {
+        [TestMethod]
+        public void ComparorsValueTest_1()
+        {
+            ComparatorValue ComparObj = new ComparatorValue();
+            ArrayList ArraySingleVal = new ArrayList()
+            {
+                2,5,6
+            };
+            ArrayList ArraySingleRes = new ArrayList()
+            {
+                2,1,2
+            };
+            ComparObj.ComparorsValue(ArraySingleVal,ArraySingleRes,1);
+            Assert.IsTrue(Globals.FlagOne == 1);
+        }
+
+        [TestMethod]
+        public void ComparorsValueTest_2()
+        {
+            ComparatorValue ComparObj = new ComparatorValue();
+            ArrayList ArraySingleVal = new ArrayList()
+            {
+                2,5,6
+            };
+            ArrayList ArraySingleRes = new ArrayList()
+            {
+                2,1,2
+            };
+            ComparObj.ComparorsValue(ArraySingleVal, ArraySingleRes, 2);
+            Assert.IsTrue(Globals.FlagOne == 1);
+        }
     }
 }
 

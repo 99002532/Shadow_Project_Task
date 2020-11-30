@@ -8,7 +8,7 @@ namespace KeyGen
     {
         public ArrayList ComparorsValue(ArrayList Dvalue, ArrayList Dresult, int switcher);
     }
-    class ComparatorValue : IComparatorValue
+    public class ComparatorValue : IComparatorValue
     {
 
         /// <summary>

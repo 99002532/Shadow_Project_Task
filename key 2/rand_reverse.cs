@@ -7,7 +7,7 @@ namespace KeyGen
     {
         public ArrayList ReverseDigiter(int InputNum);
     }
-    class RandomReverse : IRandomReverse
+    public class RandomReverse : IRandomReverse
 {
     /// <summary>
     /// This function will parse the interger data into array list. the data will be in reverse manner. 
@@ -18,12 +18,13 @@ namespace KeyGen
     {
         int i = 0, m;
         ArrayList ReverseArray = new ArrayList();
-        while (InputNum > 0)
+            while (InputNum > 0)
         {
             m = InputNum % 10;
             ReverseArray.Add(m);
             InputNum = InputNum / 10;
             i++;
+
         }
         return ReverseArray;
     }
