@@ -1,4 +1,4 @@
-
+//using Microsoft.IdentityModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyApplication;
 using KeyGen;
@@ -152,7 +152,21 @@ namespace UnitTestProject1
 
     }
 
-  
+  /*  [TestClass]
+
+    public class DigiTest
+    {
+        [TestMethod]
+        public void DigitsCounter_Test()
+        {
+            ArrayList TestDigits=new ArrayList() {2,4};
+            CountsDigits DigitTest = new CountsDigits();
+
+            DigitTest.DigitsCounter(TestDigits);
+        }
+    }
+*/
+
     [TestClass]
 
     public class RandRevTest
@@ -179,6 +193,7 @@ namespace UnitTestProject1
         {
             int sizeTest = 5;
             FileRead DigiFun = new FileRead ();
+            Globals.FlagOne = 1;
             int randval=DigiFun.IfElseComparator(sizeTest,34567);
             Assert.IsTrue(34567 != randval);
 
